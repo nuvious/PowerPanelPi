@@ -14,8 +14,8 @@ class PowerTester:
     config : str, default '~/.powerpannel/config.yml'
         Path to configuration yaml.
 
-    Example Configuration Yaml File
-    -------------------------------
+
+    >>> # Example Configuration Yaml File
     >>> # Human readable name of the device tester.
     >>> name: Upstairs Bathroom Outlets
     >>> # Url of the server.
@@ -36,10 +36,7 @@ class PowerTester:
 
     def run(self):
         """
-        Runs the tester process, registering at the reg_frequency specified in the configuration.
-        Returns
-        -------
-
+        Runs the tester process, registering at the reg_frequency specified in the configuration.\
         """
         while True:
             try:

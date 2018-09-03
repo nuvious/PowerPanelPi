@@ -21,8 +21,8 @@ class PowerPanelServer:
     config : str, default '~/.powerpannel/config.yml'
         Path to configuration yaml.
 
-    Example Configuration Yaml File
-    -------------------------------
+
+    >>> # Example Configuration Yaml File
     >>> # Delay between a devices last registration (sec) allowed before the device is removed from the active testers
     >>> # list.
     >>> device_expiration: 3
@@ -51,9 +51,6 @@ class PowerPanelServer:
     def run(self):
         """
         Runs the server.
-        Returns
-        -------
-
         """
         self.app.run(host="0.0.0.0", port=self.port)
 
@@ -68,7 +65,8 @@ class PowerPanelServer:
 
         Returns
         -------
-        An empty string.
+        str
+            An empty string.
         """
         if not self.cleanup:
             self.devices[name] = calendar.timegm(time.gmtime())
@@ -80,7 +78,8 @@ class PowerPanelServer:
 
         Returns
         -------
-        The template page built by main.html
+        str
+            The template page built by templates/main.html template.
         """
         return render_template('main.html', active_testers=self.active_testers)
 
@@ -90,7 +89,8 @@ class PowerPanelServer:
 
         Returns
         -------
-        A list of device names that are currently active.
+        list
+            A list of device names that are currently active.
         """
         self.cleanup = True
         time_now = calendar.timegm(time.gmtime())
