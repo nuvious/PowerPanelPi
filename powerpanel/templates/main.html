@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Power Panel</title>
+    <meta http-equiv="refresh" content="1" >
+</head>
+<body>
+{% block content %}
+<div class="jumbo">
+<h2>Power Panel<h2>
+<h3>Active Testers:<h3>
+</div>
+<body>
+<ul>
+    {% for device in active_testers() %}
+    <li>{{ device }}</li>
+    {% endfor %}
+</ul>
+</body>
+{% endblock %}
+</body>
+</html>
